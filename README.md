@@ -1,0 +1,1 @@
+## Worker to crawl data from https://myanimelist.net/ to mongodb
