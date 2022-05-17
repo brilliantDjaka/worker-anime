@@ -1,14 +1,18 @@
+require('dotenv').config()
+if(!process.env.MONGO_URI || !process.env.DB_NAME){
+    throw new Error('Please fill env variables')
+}
+
 const axios = require('axios').default;
 const cheerio = require('cherio')
 const Url = require('url-parse');
 const { MongoClient } = require("mongodb");
-const uri =
-    "mongodb://localhost:27017";
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
 
 async function connect(){
     await client.connect();
-    await client.db("anime_db").command({ ping: 1 });
+    await client.db(process.env.MONGO_URI).command({ ping: 1 });
 }
 
 async function doLoop(index){
