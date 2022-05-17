@@ -1,7 +1,8 @@
 ## Worker to crawl data from https://myanimelist.net/ to mongodb
 
 ### How to run:
-- set your mongodb uri in index.js
+- create .env based on .env.example
+- fill your mongodb uri & db name at .env file
 - run `node index`
 
 ### Example Data
