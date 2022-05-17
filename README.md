@@ -6,7 +6,7 @@
 
 ### Example Data
 ```
-{
+[{
   "_id": {
     "$oid": "6263bd774b2f2c838c7ffe68"
   },
@@ -16,5 +16,5 @@
   "ranking": "1",
   "id": "5114",
   "image": "https://cdn.myanimelist.net/images/anime/1223/96541.jpg"
-}
+}]
 ```
