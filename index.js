@@ -51,11 +51,24 @@ async function doLoop(index) {
 
 async function main() {
     let index = 0
+
+    const db = client.db(process.env.DB_NAME)
+    await db.collection('worker_log').updateOne({
+        _id: 1
+    }, {
+        $set: {
+            lastRun: new Date()
+        }
+    }, {
+        upsert: true
+    })
+
     while (index <= 20200) {
         console.log('Doing index = ' + index);
         await doLoop(index)
         index += 50
     }
+
     await client.close()
     process.exit(0)
 }
