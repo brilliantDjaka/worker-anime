@@ -63,7 +63,7 @@ async function main() {
         upsert: true
     })
 
-    while (index <= 20500) {
+    while (index <= 20550) {
         console.log('Doing index = ' + index);
         await doLoop(index)
         index += 50
